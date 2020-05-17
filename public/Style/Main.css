@@ -1,0 +1,10 @@
+body {
+  font-weight: 700;
+}
+#w-main {
+  text-transform: capitalize;
+}
+#w-desc {
+  text-transform: capitalize;
+  font-style: italic;
+}

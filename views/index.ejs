@@ -1,0 +1,78 @@
+<%- include ('header') %>
+<div class="row">
+  <div class="col-md-6 mx-auto text-center bg-primary mt-5 p-5 rounded">
+    <h1 id="w-location">🏡<%= name %></h1>
+    <p class="today">⏲<%= currTime %></p>
+    <h3 class="text-dark" id="w-main"><%= main %></h3>    
+          <h3 class="text-dark" id="w-desc"><%= description %></h3>
+          <h3 id="w-currTemp">🌡<%= currTemp %> &#8451;</h3>
+          <img id="w-icon" src ="<%= imgSrc %>" />
+          <ul id="w-details" class="list-group">
+            <li class="list-group-item" id="w-maxTemp"><b>Max : 🔺</b><%= maxTemp %> &#8451;</li>
+            <li class="list-group-item" id="w-minTemp"><b>Min : 🔻</b><%= minTemp %> &#8451; </li>
+            <li class="list-group-item" id="w-wind"><b>Wind : 🌪</b><%= wind %></li>
+            <li class="list-group-item" id="w-direction"><b>Wind Direction:  🍃 </b><%= windDirection %></li>
+            <li class="list-group-item" id="w-sunrise"><b>Sunrise: 🌅</b><%= sunrise %></li>
+            <li class="list-group-item" id="w-sunset"><b>Sunset: 🌄</b><%= sunset %></li>
+          </ul>
+          <hr />
+          <button
+            type="button"
+            class="btn btn-primary"
+            data-toggle="modal"
+            data-target="#locModal"
+          >
+            Change Location
+          </button>
+        </div> 
+  </div>
+</div>
+
+<!-- Modal -->
+ <div
+      class="modal fade"
+      id="locModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="locModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="locModalLabel">Choose Location</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        <form id="w-form" method="POST" action="/">
+          <div class="modal-body">
+              <div class="form-group">
+                <label for="city">City</label>
+                <input type="text" id="city" name="city" class="form-control" required>
+              </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <button id="w-change-btn" type="submit" class="btn btn-primary">
+              Save changes
+            </button>
+          </div>
+        </form>
+        </div>
+      </div> 
+    </div>
+    <%- include ('footer') %>
+ </body>
+</html>
